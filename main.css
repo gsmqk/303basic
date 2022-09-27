@@ -62,7 +62,7 @@ header .inner ul>li~li::before {
     background: #666;
 }
 
-.test_hover01 .inner {
+/* .test_hover01 .inner {
     display: flex;
     gap: 30px;
 }
@@ -166,4 +166,4 @@ header .inner ul>li~li::before {
 
 .test_hover03 figure:hover span {
     opacity: 1;
-}
+} */
