@@ -347,7 +347,7 @@ header .inner ul>li~li::before {
     transform: translateX(-50%);
     width: 1200px;
     display: flex;
-    background: tomato;
+    background: #000;
     line-height: 40px;
     color: #fff;
     text-align: center;
@@ -489,4 +489,112 @@ header .inner ul>li~li::before {
     background: #333;
     transform: translateY(2px);
     color: #fff;
+}
+
+.main_ytp {
+    padding: 100px 0;
+    text-align: center;
+    color: #fff;
+    filter: grayscale(1);
+}
+
+.main_ytp h2 {
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 1em;
+    margin: 0 0 15px 0;
+}
+
+.main_ytp p {
+    font-size: 15px;
+    margin: 0 0 30px 0;
+}
+
+.main_ytp i {
+    padding: 15px;
+    border-radius: 50%;
+    margin: 0 5px 0 0;
+    background: #333;
+    transform: translateY(2px);
+    color: #fff;
+}
+
+.main_product {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.main_product h2 {
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 1em;
+    margin: 0 0 15px 0;
+}
+
+.main_product p {
+    font-size: 15px;
+    margin: 0 0 30px 0;
+}
+
+.main_product figure {
+    padding: 0 15px;
+}
+
+.main_product .inner {
+    position: relative;
+}
+
+.main_product i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px;
+    background: #333;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 50%;
+}
+
+.main_product i:first-child {
+    margin: 0 0 0 -700px;
+}
+
+.main_product i:last-child {
+    margin: 0 0 0 700px;
+}
+
+.main_product .product_slide {
+    margin: 0 0 30px 0;
+}
+
+.main_product .dots {
+    display: flex;
+    justify-content: center;
+    font-size: 0;
+}
+
+.main_product .dots li {
+    position: relative;
+    width: 30px;
+    height: 20px;
+}
+
+.main_product .dots li::after {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 30%;
+    background: #ddd;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.5s;
+}
+
+.main_product .dots li.on::after {
+    height: 100%;
+    transform: translate(-50%, -50%)
+        /* rotate(15deg) */
+    ;
 }
