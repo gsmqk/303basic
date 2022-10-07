@@ -9,7 +9,7 @@ $('.top_banner i').on('click', function () {
 })
 
 $('.main_slide').on('init afterChange', function (e, s, c) {
-    console.log(e, s, c);
+    // console.log(e, s, c);
     $('.num').text((c ? c + 1 : 1) + "/" + s.slideCount);
     $('.main_visual .btn li').eq(c).addClass('on').siblings().removeClass('on');
     var current = $('.main_slide .slick-current');
@@ -80,3 +80,28 @@ $('.main_product .dots li').on('click', function () {
     var idx = $(this).index();
     $('.product_slide').slick('slickGoTo', idx)
 })
+
+// index 278~291- tab_test
+// console.log("ttt", $('.tab_test').index()) //6
+
+// $('.tab_test').on('click', function () {
+//     var idx = $(this).index(); //0,1,2
+//     $('.tab>div').eq(idx).addClass('on')
+//         .siblings().removeClass('on');
+//     $(this).addClass('on')
+//         .siblings().removeClass('on');
+//     // $('.txt').text("0" + (idx + 1))
+// })
+
+$('.main_customer .tab_menu>li').on('click', function () {
+    var i = $(this).index();
+    $('.main_customer .tab_content>li').eq(i).addClass('on')
+        .siblings().removeClass('on');
+    $(this).addClass('on')
+        .siblings().removeClass('on');
+})
+
+$('#link').on('change', function () {
+    var lnk = $(this).val();
+    lnk && window.open(lnk)
+});
