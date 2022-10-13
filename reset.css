@@ -5,6 +5,7 @@
     color: inherit;
     font-size: inherit;
     font-weight: inherit;
+    font-style: normal;
 }
 
 ul,
@@ -18,4 +19,9 @@ a {
 
 body {
     line-height: 1;
+}
+
+img {
+    vertical-align: middle;
+    max-width: 100%;
 }
