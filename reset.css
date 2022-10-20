@@ -1,11 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+@import url('https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: inherit;
     font-size: inherit;
     font-weight: inherit;
-    font-style: normal;
+
+}
+
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 ul,
@@ -15,13 +23,22 @@ ol {
 
 a {
     text-decoration: none;
-}
-
-body {
-    line-height: 1;
+    color: inherit;
 }
 
 img {
     vertical-align: middle;
     max-width: 100%;
+}
+
+input,
+button,
+textarea {
+    vertical-align: middle;
+}
+
+body {
+    line-height: 1;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #444;
 }
