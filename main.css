@@ -3,6 +3,7 @@
     --mc: #008850;
     --wc: #f9f9f9;
     --dc: #444444;
+    --sc: #00e085;
 }
 
 .inner {
@@ -244,6 +245,159 @@
 
 .main {
     position: relative;
-    background: url(../images/main_01.jpg);
-    height: 150vh;
+    padding: 160px 0 0 0;
+}
+
+.main.on {
+    padding: 0 0 0 0;
+    transition: 0.2s;
+}
+
+.main_slide figure {
+    position: relative;
+    height: calc(100vh - 160px);
+}
+
+.main_slide figure .inner {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--wc);
+}
+
+.main_slide figure .inner .copy {
+    font-size: 60px;
+    font-weight: 700;
+    margin: 0 0 50px 0;
+    text-shadow: 0 0 3px var(--dc);
+}
+
+.main_slide figure .inner span {
+    font-size: 20px;
+    font-weight: 300;
+    text-shadow: 0 0 3px var(--dc);
+}
+
+.main_slide .itm01 {
+    background: url(../images/main_01.jpg) no-repeat center center/cover;
+}
+
+.main_slide .itm02 {
+    background: url(../images/main_02.jpg) no-repeat center center/cover;
+}
+
+.main_slide .itm03 {
+    background: url(../images/main_03.png) no-repeat center center/cover;
+}
+
+.main_visual {
+    position: relative;
+
+}
+
+.main_visual .arrows i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--wc);
+    font-size: 50px;
+}
+
+.main_visual .arrows i:first-child {
+    margin: 0 0 0 -700px;
+}
+
+.main_visual .arrows i:last-child {
+    margin: 0 0 0 700px;
+}
+
+.main_visual .page {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin: 0 0 0 600px;
+    transform: translateX(-100%);
+    text-align: right;
+    color: var(--wc);
+    line-height: 35px;
+}
+
+.main_visual .page li {
+    font-size: 0;
+}
+
+.main_visual .page li.on {
+    font-size: 15px;
+}
+
+.main_visual .page li::after {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--wc);
+    margin: 0 0 0 15px;
+    vertical-align: middle;
+}
+
+.main_visual .page li.on::after {
+    background: var(--wc);
+}
+
+.main_visual .num {
+    position: absolute;
+    left: 50%;
+    bottom: 30%;
+    margin: 0 0 0 -600px;
+    color: var(--wc);
+    font-size: 25px;
+    text-shadow: 0 0 3px var(--dc);
+}
+
+.main_visual .num strong {
+    font-size: 40px;
+    font-weight: 500;
+    color: var(--sc);
+}
+
+.main_visual .wheel {
+    position: absolute;
+    left: 50%;
+    bottom: 100px;
+    transform: translateX(-50%);
+    color: var(--wc);
+    text-transform: uppercase;
+}
+
+.main_visual .wheel::before {
+    content: "";
+    position: absolute;
+    top: -70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 50px;
+    border: 2px solid var(--wc);
+    border-radius: 15px;
+}
+
+.main_visual .wheel::after {
+    content: "";
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 10px;
+    background: var(--wc);
+    border-radius: 1px;
+    animation: wheel 0.5s infinite;
+}
+
+@keyframes wheel {
+    to {
+        top: -55px
+    }
 }
