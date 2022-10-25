@@ -48,6 +48,24 @@ $(function () {
         $('.main_slide').slick('slickNext')
     });
 
+    $('.left_slider').slick({
+        arrows: false,
+        fade: true,
+        asNavFor: '.right_slider'
+    });
+
+    $('.right_slider').slick({
+        arrows: false,
+        slidesToShow: 5,
+        asNavFor: '.left_slider'
+    });
+
+    $('.main_build .wbox .right .arrows i:first-child').on('slick', function () {
+        $('.left_slider').slick('slickPrev')
+    });
+    $('.main_build .wbox .right .arrows i:last-child').on('slick', function () {
+        $('.left_slider').slick('slickNext')
+    });
 
 
 
