@@ -60,14 +60,38 @@ $(function () {
         asNavFor: '.left_slider'
     });
 
-    $('.main_build .wbox .right .arrows i:first-child').on('slick', function () {
+    $('.main_build .wbox .right .arrows i:first-child').on('click', function () {
         $('.left_slider').slick('slickPrev')
     });
-    $('.main_build .wbox .right .arrows i:last-child').on('slick', function () {
+    $('.main_build .wbox .right .arrows i:last-child').on('click', function () {
         $('.left_slider').slick('slickNext')
     });
 
+    $('.solution_slider').slick({
+        centerMode: true,
+        centerPadding: '300px',
+        arrows: false,
+        dots: true,
+    })
 
+    $('.solution_slider').on('afterChange', function (e, s, c) {
+        $('.solution_con .con').eq(c).addClass('on').siblings().removeClass('on');
+    })
 
+    $('.main_solution .arrows div:first-child').on('click', function () {
+        $('.solution_slider').slick('slickPrev')
+    })
+    $('.main_solution .arrows div:last-child').on('click', function () {
+        $('.solution_slider').slick('slickNext')
+    });
+
+    $('.to_top').on('click', function () {
+        $('html, body').animate({ scrollTop: 0 }, 1000)
+    });
+
+    $(window).on('scroll', function () {
+        var sct = $(window).scrollTop();
+        sct > 300 ? $('.to_top').fadeIn() : $('.to_top').fadeOut()
+    })
 
 })
