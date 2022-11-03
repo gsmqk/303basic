@@ -120,5 +120,37 @@ $(function () {
         $(this).addClass('on').siblings().removeClass('on');
     })
 
+    $('.footer .ft_top .right>li>a').on('click', function () {
+        $('.footer .ft_top .right>li').removeClass('on')
+        $(this).parent().toggleClass('on');
+    });
 
-})
+    //i를 click하면 li들 모두 다 on을 뺀다
+    $('.footer .ft_top .right i').on('click', function () {
+        $('.footer .ft_top .right>li').removeClass('on')
+    });
+
+    //팝업창 고정 스크롤X
+    // $('.popup_case').on('wheel', function (e) {
+    //     e.preventDefault();
+    $('.popup_case').on('wheel', function (event) {
+        event.preventDefault();
+    });
+
+    $('.popup i').on('click', function () {
+        $('.popup_case').hide();
+    });
+
+    $('popup input').on('change', function () {
+        $('.popup_case').hide();
+        //쿠키를 던져줘라
+    });
+
+    $('.top_banner input').on('change', function () {
+        $('.top_banner').slideUp(200);
+        $('.main').addClass('on');
+    });
+
+
+
+});
