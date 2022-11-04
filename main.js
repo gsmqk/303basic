@@ -57,7 +57,15 @@ $(function () {
     $('.right_slider').slick({
         arrows: false,
         slidesToShow: 5,
-        asNavFor: '.left_slider'
+        asNavFor: '.left_slider',
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                }
+            }
+        ]
     });
 
     $('.main_build .wbox .right .arrows i:first-child').on('click', function () {
@@ -72,6 +80,15 @@ $(function () {
         centerPadding: '300px',
         arrows: false,
         dots: true,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    centerMode: false,
+                    centerPadding: '300px',
+                }
+            }
+        ]
     })
 
     $('.solution_slider').on('afterChange', function (e, s, c) {
@@ -146,11 +163,36 @@ $(function () {
         //쿠키를 던져줘라
     });
 
+    var cookie = $.cookie('popup');
+    var b_cookie = $.cookie('top_banner');
+
+    if (!cookie) {
+        $('.popup_case').show()
+    }
+    if (!b_cookie) {
+        $('.popup_case').show()
+    }
+
     $('.top_banner input').on('change', function () {
         $('.top_banner').slideUp(200);
         $('.main').addClass('on');
+        $.cookie('top_banner', 'value', (expire))
     });
 
+    //모바일 메뉴
+    $('.header nav>ul>li>a').on('click', function (event) {
+        event.preventDefault();
+        $('.submenu').stop().slideUp();
+        $(this).next().stop().slideToggle();
+    });
+
+    $(window).on('resize', function () {
+        $('.submenu').removeAttr('style');
+    });
+
+    $('.mopen').on('click', function () {
+        $('nav').toggleClass('on');
+    })
 
 
 });
